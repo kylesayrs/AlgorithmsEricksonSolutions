@@ -1,0 +1,24 @@
+Lemma: Suppose that the permutation is not ordered.
+Note that for any not-ordered permutation,
+there are always two adjacent elements which are not ordered
+
+Proof
+Let a, b such that a is closer than b and they're adjacent
+
+Compute the cost of swapping
+delta_cost(a) = F(a)L(b)
+delta_cost(b) = -F(b)L(a)
+
+delta_cost(a, b) = F(a)L(b) - F(b)L(a)
+
+Suppose we have a correct ordering.
+In order to guarantee any swap is worse than what we currently have,
+this implies that cost must increase
+
+delta_cost(a, b) = F(a)L(b) - F(b)L(a) >= 0
+=> F(a)/L(a) >= F(b)/L(b)
+reorder so a is on the  less than side for sort() to work
+=> L(a)/F(a) <= L(b)/F(b)
+
+Therefore, the ordering that guarantees any swaps only increase the cost is the
+the ordering of L(a)/F(a) ascending.

@@ -1,0 +1,2 @@
+logb(n) = n
+b^(logb(n)) = n
